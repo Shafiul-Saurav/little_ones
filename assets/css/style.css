@@ -1,0 +1,827 @@
+/*
+Author       : Shafiul Saurav.
+Template Name: E-commerce multiple pages Template
+Version      : 1.0
+*/
+/*=============================================================
+    CSS INDEX
+    =============================
+    01. GENERAL STYLE (body, link color, section-title, preloader btn, overlay, section-padding etc)
+    02. START BOOTSTRAP NAVIGATION OVERRIDES
+    03. START HOME DESIGN
+    04. START SERVICE DESIGN
+    05. START WHY CHOOSE DESIGN
+    06. START SPECIAL PACKAGE DESIGN
+    07. START TOP DEALS DESIGN
+    08. START DEALS & DISCOUNT DESIGN
+    09. START GALLERY DESIGN
+    10. START BLOG DESIGN
+    11. START TESTIMONIAL DESIGN
+    12. START COMPANY PARTNER LOGO
+    13. START CONTACT DESIGN
+    14. START FOOTER DESIGN
+  =============================================================*/
+
+
+/*
+* ----------------------------------------------------------------------------------------
+* 01.GOOGLE FONTS START
+* ----------------------------------------------------------------------------------------
+*/
+
+@font-face {
+  font-family: futura2-normal;
+  src: url('../fonts/futura2-normal.ttf');
+}
+@font-face {
+  font-family: yugothib;
+  src: url('../fonts/yugothib.ttf');
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 01.GOOGLE FONTS END
+* ----------------------------------------------------------------------------------------
+*/
+
+
+/*
+* ----------------------------------------------------------------------------------------
+* 02.COMMON CSS START
+* ----------------------------------------------------------------------------------------
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
+pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
+s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+figure, header, nav, section, article, aside, footer, figcaption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+html, body {
+  font-family: futura2-normal;
+  font-weight: 400;
+  background-color: #ffffff;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header, nav, section, article, aside, footer, hgroup {
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+h1 {
+  font-family: futura2-normal;
+  font-weight: 400;
+  font-size: 40px;
+  color: #674A27;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-family: futura2-normal;
+  font-weight: 400;
+  font-size: 30px;
+  margin-bottom: 15px;
+  color: #674A27;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: futura2-normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: #674A27;
+}
+
+h4 {
+  font-family: yugothib;
+  font-weight: 400;
+  font-size: 16px;
+  color: #674A27;
+  margin-bottom: 30px;
+}
+
+ul {
+  margin-bottom: 0px;
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+p {
+  font-family: yugothib;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 26px;
+  color: #777777;
+  margin-bottom: 15px;
+}
+
+img {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+.btn_primary {
+  font-family: OpenSans-SemiBold;
+  font-weight: 600;
+  font-size: 15px;
+  width: 260px;
+  padding: 12px 40px;
+  color: #674A27;
+  text-align: center;
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  border-radius: 3px;
+  -webkit-transition: all 0.4s linear;
+  -o-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+  z-index: 9;
+  border: 1px solid #674A27;
+  margin-top: 70px;
+}
+
+.btn_primary::after {
+  content: '';
+  position: absolute;
+  left: -35%;
+  top: 0;
+  z-index: -9;
+  width: 0%;
+  height: 100%;
+  background-color: #674A27;
+  -webkit-transform: skew(45deg);
+  -ms-transform: skew(45deg);
+  transform: skew(45deg);
+  -webkit-transition: all 0.4s linear;
+  -o-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}
+
+.btn_primary:hover::after {
+  width: 170%;
+}
+
+.btn_primary:hover {
+  color: #ffffff !important;
+  border: 1px solid #674A27;
+}
+
+.btn_secondary {
+  width: 150px;
+  padding: 12px 22px;
+}
+
+button:focus,
+input:focus,
+textarea:focus,
+button,
+input,
+textarea {
+  outline: 0;
+  border: 0;
+}
+
+.m_bottom {
+  margin-bottom: 160px;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 02.COMMON CSS END
+* ----------------------------------------------------------------------------------------
+*/
+
+
+/*
+* ----------------------------------------------------------------------------------------
+* 03.VARIABLES START
+* ----------------------------------------------------------------------------------------
+*/
+
+:root {
+  --color-1: #212529;
+  --color-2: #998274;
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 03.VARIABLES END
+* ----------------------------------------------------------------------------------------
+*/
+
+
+/*
+* ----------------------------------------------------------------------------------------
+* 04.PRELOADER START
+* ----------------------------------------------------------------------------------------
+*/
+
+.pre-loader_js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999999;
+  background: var(--color-1);
+  width: 100%;
+  height: 100vh;
+}
+
+.cube_wrapper {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.cube_folding {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  font-size: 0;
+}
+
+.cube_folding span {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  display: inline-block;
+}
+
+.cube_folding span::before {
+  content: '';
+  background-color: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 25px;
+  height: 25px;
+  -ms-transform-origin: 100% 100%;
+  -webkit-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+  -webkit-animation: folding 2.5s infinite linear both;
+  animation: folding 2.5s infinite linear both;
+}
+
+.cube_folding .leaf2 {
+  -ms-transform: rotateZ(90deg) scale(1.1);
+  -webkit-transform: rotateZ(90deg) scale(1.1);
+  transform: rotateZ(90deg) scale(1.1);
+}
+
+.cube_folding .leaf2::before {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+  background-color: #f2f2f2;
+}
+
+.cube_folding .leaf3 {
+  -ms-transform: rotateZ(270deg) scale(1.1);
+  -webkit-transform: rotateZ(270deg) scale(1.1);
+  transform: rotateZ(270deg) scale(1.1);
+}
+
+.cube_folding .leaf3::before {
+  -webkit-animation-delay: 0.9s;
+  animation-delay: 0.9s;
+  background-color: #f2f2f2;
+}
+
+.cube_folding .leaf4 {
+  -ms-transform: rotateZ(180deg) scale(1.1);
+  -webkit-transform: rotateZ(180deg) scale(1.1);
+  transform: rotateZ(180deg) scale(1.1);
+}
+
+.cube_folding .leaf4::before {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+  background-color: #e6e6e6;
+}
+
+@-webkit-keyframes folding {
+  0%,
+  10% {
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+    transform: perspective(140px) rotateX(-180deg);
+    opacity: 0;
+  }
+  25%,
+  75% {
+    -webkit-transform: perspective(140px) rotateX(0deg);
+    transform: perspective(140px) rotateX(0deg);
+    opacity: 1;
+  }
+  90%,
+  100% {
+    -webkit-transform: perspective(140px) rotateY(180deg);
+    transform: perspective(140px) rotateY(180deg);
+    opacity: 0;
+  }
+}
+
+@keyframes folding {
+  0%,
+  10% {
+    -ms-transform: perspective(140px) rotateX(-180deg);
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+    transform: perspective(140px) rotateX(-180deg);
+    opacity: 0;
+  }
+  25%,
+  75% {
+    -ms-transform: perspective(140px) rotateX(0deg);
+    -webkit-transform: perspective(140px) rotateX(0deg);
+    transform: perspective(140px) rotateX(0deg);
+    opacity: 1;
+  }
+  90%,
+  100% {
+    -ms-transform: perspective(140px) rotateY(180deg);
+    -webkit-transform: perspective(140px) rotateY(180deg);
+    transform: perspective(140px) rotateY(180deg);
+    opacity: 0;
+  }
+}
+
+.disppear {
+  -webkit-animation: vanish 1s forwards;
+  animation: vanish 1s forwards;
+}
+
+@-webkit-keyframes vanish {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes vanish {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 04.PRELOADER END
+* ----------------------------------------------------------------------------------------
+*/
+
+
+/*
+* ----------------------------------------------------------------------------------------
+* 05.HEADER START
+* ----------------------------------------------------------------------------------------
+*/
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 999;
+}
+
+/*.logo__area .logo {
+	width: 10.5rem;
+	-webkit-filter: invert(57%) sepia(97%) saturate(5014%) hue-rotate(130deg) brightness(97%) contrast(104%);
+	filter: invert(57%) sepia(97%) saturate(5014%) hue-rotate(130deg) brightness(97%) contrast(104%);
+}*/
+
+/* 
+---------------------------------------------
+menu start
+--------------------------------------------- 
+*/
+.main__menu {
+		position: relative;
+		position: fixed;
+		right: -100%;
+		top: 0;
+		height: 100vh;
+		background-color: #ffffff;
+		-webkit-transition: all 0.6s ease-in;
+		-o-transition: all 0.6s ease-in;
+		transition: all 0.6s ease-in;
+		z-index: 9999;
+}
+.main__menu ul {
+	width: 60%;
+}
+.main__menu ul li:not(:last-child) {
+	margin-right: 0;
+	margin: 20px 0;
+}
+
+.main__menu ul li a {
+	font-family: futura2-normal;
+	font-size: 14px;
+	color: #674A27;
+	letter-spacing: 1px;
+	position: relative;
+}
+.lang_ing {
+  position: absolute;
+  top: 25px;
+  right: 15%;
+  z-index: 999999;
+}
+.lang_ing a{
+  font-family: futura2-normal;
+  font-size: 13px;
+  color: #674A27 !important;
+}
+/* 
+---------------------------------------------
+menu end
+--------------------------------------------- 
+*/
+
+/* 
+---------------------------------------------
+show & hide menu start
+--------------------------------------------- 
+*/
+.main__menu-show {
+	right: 0;
+	width: 45%;
+	-webkit-transition: all 0.6s ease-in;
+	-o-transition: all 0.6s ease-in;
+	transition: all 0.6s ease-in;
+}
+.menu__show__icon {
+	display: block;
+	padding: 30px;
+  	background-color: #998274;
+	cursor: pointer;
+	position: relative;
+	z-index: 99999;
+}
+.bar1,
+.bar2,
+.bar3 {
+	width: 44px;
+	height: 1px;
+	background-color: #ffffff;
+	margin: 6px 0;
+}
+.change .bar1 {
+	-webkit-transform: rotate(-45deg) translate(-8px, 7px);
+	-ms-transform: rotate(-45deg) translate(-8px, 7px);
+	transform: rotate(-45deg) translate(-4px, 4px);
+}
+.change .bar2 {
+	opacity: 0;
+}
+.change .bar3 {
+	-webkit-transform: rotate(45deg) translate(-8px, -7px);
+	-ms-transform: rotate(45deg) translate(-8px, -7px);
+	transform: rotate(45deg) translate(-5px, -7px);
+}
+/* 
+---------------------------------------------
+show & hide menu start
+--------------------------------------------- 
+*/
+
+/*-- Sticky Menu --*/
+.sticky__menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #ffffff;
+	z-index: 99999;
+	-webkit-box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+	box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+/* 
+---------------------------------------------
+sub-menu start
+--------------------------------------------- 
+*/
+
+.main__menu ul li ul.sub_menu li a{
+	color: #909090 !important;
+}
+.main__menu ul li ul.sub_menu li a:focus,
+.main__menu ul li ul.sub_menu li a:hover,
+.main__menu ul li ul.sub_menu li a:active {
+  background-color: #ffffff !important;
+}
+.arrow_down span.rotate {
+  transform: rotate(-180deg);
+}
+
+/* 
+---------------------------------------------
+sub-menu end
+--------------------------------------------- 
+*/
+
+/* 
+---------------------------------------------
+social icon start
+--------------------------------------------- 
+*/
+.social_icon {
+	border-top: 1px solid #E6E6E6;
+}
+.social_icon ul li a {
+	font-size: 11px;
+}
+.social_icon ul li a i{
+	font-size: 16px !important;
+	margin-right: 10px;
+}
+/* 
+---------------------------------------------
+social icon end
+--------------------------------------------- 
+*/
+
+
+/*
+* ----------------------------------------------------------------------------------------
+* 05.HEADER END
+* ----------------------------------------------------------------------------------------
+*/
+
+
+/*
+* ----------------------------------------------------------------------------------------
+* ★★★.MAIN CONTENT START                                                            ✹⛧✹
+* ----------------------------------------------------------------------------------------
+*/
+
+
+/*
+* ----------------------------------------------------------------------------------------
+* 05.PRODUCT_SECTION START
+* ----------------------------------------------------------------------------------------
+*/
+
+.product_section {
+  background-image: url(../images/kv02.png);
+  padding: 100px 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 500px;
+}
+.product_heading_text {
+
+}
+.product_heading_text h1{
+  
+}
+.product_heading_text p{
+  
+}
+.button_area_top {
+
+}
+.button_area_top a{
+  font-family: futura2-normal;
+  font-weight: 400px;
+  font-size: 15px;
+  color: #ffffff;
+  background-color: #998274;
+  padding: 6px 20px;
+  margin: 0 10px;
+  border: 1px solid #998274;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+}
+.button_area_top a:hover{
+  color: #998274;
+  background-color: #ffffff;
+  border: 1px solid #998274;
+}
+.button_area_top_mobile a{
+  margin-bottom: 10px;
+  text-align: center;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 05.PRODUCT_SECTION END
+* ----------------------------------------------------------------------------------------
+*/
+
+
+/*
+* ----------------------------------------------------------------------------------------
+* 05.BABY-MEAL START
+* ----------------------------------------------------------------------------------------
+*/
+
+.common_section {
+  padding: 80px 0;
+}
+.right-img {
+  text-align: right;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 05.BABY-MEAL END
+* ----------------------------------------------------------------------------------------
+*/
+
+
+/*
+* ----------------------------------------------------------------------------------------
+* 05.CONCEPT START
+* ----------------------------------------------------------------------------------------
+*/
+
+.concept_section {
+
+}
+.group_text {
+  margin-bottom: 25px;
+}
+.group_text h4 {
+  margin-bottom: 10px;
+}
+.group_text h3 {
+  margin-bottom: 10px;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 05.CONCEPT END
+* ----------------------------------------------------------------------------------------
+*/
+
+
+/*
+* ----------------------------------------------------------------------------------------
+* ★★★.MAIN CONTENT END                                                            ✹⛧✹
+* ----------------------------------------------------------------------------------------
+*/
+
+
+/*
+* ----------------------------------------------------------------------------------------
+* 05.FOOTER START
+* ----------------------------------------------------------------------------------------
+*/
+
+.footer_section {
+  padding: 30px 0;
+  background-color: #998274;
+}
+.footer_img {
+  border-bottom: 1px solid #ffffff;
+}
+.footer_menu {
+
+}
+.footer_menu a {
+  font-family: futura2-normal;
+  font-size: 14px;
+  margin: 0 25px;
+  color: #ffffff;
+}
+.footer_text {
+  margin: 50px 0 0 0;
+}
+.footer_text p {
+  font-family: futura2-normal;
+  font-size: 12px;
+  color: #ffffff;
+  margin-bottom: 0;
+}
+.footer_text a {
+  color: #ffffff;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 05.FOOTER END
+* ----------------------------------------------------------------------------------------
+*/
+
+
+
+
+/*
+* ----------------------------------------------------------------------------------------
+* 08.SCROLL TO TOP START
+* ----------------------------------------------------------------------------------------
+*/
+
+#top-arrow_js {
+  opacity: 0;
+  position: fixed;
+  bottom: 48px;
+  right: 48px;
+  z-index: 999999;
+  font-size: 18px;
+  background-color: #998274;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 5px;
+  -webkit-animation: myBtn 3.5s infinite linear;
+  animation: myBtn 3.5s infinite linear;
+}
+
+#top-arrow_js i {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+@-webkit-keyframes myBtn {
+  0% {
+    right: 30px;
+    bottom: 40px;
+  }
+  25% {
+    bottom: 20px;
+    right: 30px;
+  }
+  50% {
+    right: 30px;
+    bottom: 40px;
+  }
+  75% {
+    bottom: 20px;
+    right: 30px;
+  }
+  100% {
+    right: 30px;
+    bottom: 40px;
+  }
+}
+
+@keyframes myBtn {
+  0% {
+    right: 30px;
+    bottom: 40px;
+  }
+  25% {
+    bottom: 20px;
+    right: 30px;
+  }
+  50% {
+    right: 30px;
+    bottom: 40px;
+  }
+  75% {
+    bottom: 20px;
+    right: 30px;
+  }
+  100% {
+    right: 30px;
+    bottom: 40px;
+  }
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 08.SCROLL TO TOP END
+* ----------------------------------------------------------------------------------------
+*/
+
+
